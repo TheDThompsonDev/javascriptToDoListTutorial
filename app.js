@@ -12,6 +12,7 @@ const addTask = () => {
     todoInput.value = '';
   }
 };
+
 //Create new task items
 const createTaskItem = (taskText) => {
   const taskItem = document.createElement('li');
@@ -35,16 +36,19 @@ const createTaskItem = (taskText) => {
 
   return taskItem;
 };
+
 //Delete tasks
 const deleteTask = (event) => {
   const taskItem = event.target.parentNode;
   todoList.removeChild(taskItem);
 };
+
 //Cross out tasks
 const toggleTask = (event) => {
   const taskItem = event.target.parentNode;
   taskItem.classList.toggle('completed');
 };
+
 //Event listeners
 addTaskButton.addEventListener('click', addTask);
 todoInput.addEventListener('keydown', function (event) {
@@ -54,6 +58,7 @@ todoInput.addEventListener('keydown', function (event) {
 });
 
 todoList.addEventListener('change', toggleTask);
+
 //Examples of tasks
 const initalTasks = ['Buy Groceries', 'Pay Bills', 'Walk The Dog'];
 
